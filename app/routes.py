@@ -1,24 +1,7 @@
+import requests
 from flask import render_template, flash, redirect, url_for
-from app import app
+from app import app, db
 from app.forms import LoginForm
-@app.route('/')
-@app.route('/index')
-def index():
-    user = {'username': 'Andreas Hupfer'}
-    protocols = [
-        {
-            'subject': 'VS Sitzung 22.01.2021',
-            'Date': '22.01.2021',
-            'owner': {'username': 'Andreas Hupfer'}
-        },
-        {
-            'subject': 'VS Sitzung 24.02.2021',
-            'Date': '24.02.2021',
-            'owner': {'username': 'Andreas Hupfer'}
-        }
-    ]
-    return render_template('index.html', title='Home', user=user, protocols=protocols)
-
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
