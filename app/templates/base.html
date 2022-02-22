@@ -10,8 +10,7 @@
 </head>
 <body>
     <div>Meeting Protocol:
-        <a href="{{ url_for('meeting.meetings') }}">Home</a>
-        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('protocol.meetings') }}">Home</a>
     </div>
     {% with messages = get_flashed_messages() %}
         {% if messages %}

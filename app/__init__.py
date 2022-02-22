@@ -11,6 +11,6 @@ migrate = Migrate(app, db)
 
 
 from app import routes, models
-from app.meeting.views import meeting
+from app.protocol.views import protocol
 
-app.register_blueprint(meeting)
+app.register_blueprint(protocol)

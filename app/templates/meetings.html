@@ -3,7 +3,7 @@
     <h1>Meetings</h1>
     {% for meeting in meetings %}
         <div>
-            <b><a href="{{ url_for('meeting.meetings', id=meeting.id) }}">{{ meeting.subject }}</a></b>
+            <b><a href="{{ url_for('protocol.meeting', id=meeting.id) }}">{{ meeting.subject }}</a></b>
         </div>
     {% endfor %}
 {% endblock %}
