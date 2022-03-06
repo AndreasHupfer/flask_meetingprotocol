@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1 class="display-1">Add Meeting</h1>
+    <form action="" method="post" name="addMeeting">
+        <p>subject {{ form.subject }}</p>
+        <p>date {{ form.date }}</p>
+        <p>Time begin {{ form.time_begin }}</p>
+        <p>Time end {{ form.time_end }}</p>
+        <p><input type="submit" value="Sign In"></p>
+    </form>
+{% endblock %}

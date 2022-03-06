@@ -19,4 +19,10 @@ class MeetingParticipantRole(db.Model):
     name = db.Column(db.String(32), index=True)
     participant_id = db.Column(db.Integer, db.ForeignKey('participant.id'))
     meeting_id = db.Column(db.Integer, db.ForeignKey('meeting.id'))
-
+'''
+class Agenda(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    subjekt = db.Column(db.String(32), index=True)
+    type = db.Column(db.String(16), Index=True, nullable=False)
+    content = db.Text(db.String)
+   '''
