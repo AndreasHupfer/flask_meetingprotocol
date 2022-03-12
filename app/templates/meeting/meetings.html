@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+    <script>
+        $(document).ready(function(){
+            $(".subject").change(function (){
+               alert($(".subject").val())
+                $.ajax({
+                    type : 'POST'
+                    url: " {{ url_for('meeting.meeting_post') }} ",
+                    contentType: 'application/json;charset=UTF-8',
+                    data: $(".subject").val()
+                    });
+            });
+        });
+    </script>
+    <h1 class="display-1">{{ title }}</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+         <ul class="list-group list-group-flush">
+            {% for meeting in meetings %}
+                <li class="list-group-item"><b><a href="{{ url_for('meeting.meetings', id=meeting.id) }}">{{ meeting.subject }}</a></b></li>
+            {% endfor %}
+        </ul>
+        </div>
+        <div class="col">
+          <h2>Meeting details</h2>
+        </br>
+        <div class="shadow p-3 mb-5 bg-body rounded" >
+                <input class="subject" value="{{ meeting.subject }}"><br>
+                <b>{{ meeting.date_time_begin }}</b>
+        </div>
+        </div>
+      </div>
+    </div>
+    </br>
+
+{% endblock %}
